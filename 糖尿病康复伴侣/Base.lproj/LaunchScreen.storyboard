@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-oZ-Cth">
+                                <rect key="frame" x="85" y="50" width="150" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="MeN-5O-wHY"/>
+                                    <constraint firstAttribute="height" constant="120" id="lGw-8T-JcQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="健康每一天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo6-Z6-txW">
+                                <rect key="frame" x="54" y="178" width="212" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TqV-zt-zu4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.13617382580000001" green="0.62138046400000002" blue="0.78885304960000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP4-og-el5">
+                                <rect key="frame" x="92" y="356" width="135" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FKT-IA-NFD"/>
+                                    <constraint firstAttribute="width" constant="135" id="wfs-k6-c10"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.13617382576900808" green="0.62138046397258351" blue="0.78885304959785518" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hitache Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tJ-q2-nwF">
+                                <rect key="frame" x="90" y="414" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="6Bg-ia-4dz"/>
+                                    <constraint firstAttribute="height" constant="21" id="Onb-9n-cQk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.13617382580000001" green="0.62138046400000002" blue="0.78885304960000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日立健康管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-0g-H8m">
+                                <rect key="frame" x="95" y="385" width="130" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9ya-bl-WQA"/>
+                                    <constraint firstAttribute="width" constant="130" id="SL8-uR-TcN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.13617382580000001" green="0.62138046400000002" blue="0.78885304960000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aLe-0g-H8m" firstAttribute="top" secondItem="OP4-og-el5" secondAttribute="bottom" constant="8" id="6cL-Iv-UhM"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="3tJ-q2-nwF" secondAttribute="bottom" constant="45" id="6er-nm-QJw"/>
+                            <constraint firstItem="mo6-Z6-txW" firstAttribute="top" secondItem="Vh8-oZ-Cth" secondAttribute="bottom" constant="8" id="Agn-Iy-Fnk"/>
+                            <constraint firstAttribute="trailing" secondItem="mo6-Z6-txW" secondAttribute="trailing" constant="54" id="C0l-w6-gAf"/>
+                            <constraint firstItem="3tJ-q2-nwF" firstAttribute="top" secondItem="aLe-0g-H8m" secondAttribute="bottom" constant="8" id="GZ9-bY-wds"/>
+                            <constraint firstItem="3tJ-q2-nwF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LUp-X2-sJG"/>
+                            <constraint firstItem="aLe-0g-H8m" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Lup-lp-1Ur"/>
+                            <constraint firstItem="Vh8-oZ-Cth" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="OIL-r2-Szh"/>
+                            <constraint firstItem="Vh8-oZ-Cth" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="30" id="Rng-Zh-yx4"/>
+                            <constraint firstItem="mo6-Z6-txW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="54" id="X3z-dD-mZo"/>
+                            <constraint firstItem="Vh8-oZ-Cth" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="u1x-mE-aN7"/>
+                            <constraint firstItem="OP4-og-el5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xE7-eR-UU0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OIL-r2-Szh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo.png" width="449" height="445"/>
+    </resources>
+</document>

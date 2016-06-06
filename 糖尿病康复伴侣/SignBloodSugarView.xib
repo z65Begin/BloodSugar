@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SignBloodSugarView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-Gv-H80">
+                    <rect key="frame" x="265" y="4" width="35" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="9D9-qp-2Ph"/>
+                        <constraint firstAttribute="height" constant="22" id="urM-jN-DIt"/>
+                    </constraints>
+                    <state key="normal" image="btn_food_add.png"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHp-ZT-B7D">
+                    <rect key="frame" x="0.0" y="29" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.176293643" green="0.78935505370000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="eHU-yH-ueT"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="血糖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omf-vw-0gD">
+                    <rect key="frame" x="10" y="4" width="112" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="112" id="EpV-Rs-Xk5"/>
+                        <constraint firstAttribute="height" constant="21" id="e6h-hi-md2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="IHp-ZT-B7D" secondAttribute="trailing" id="0gI-pT-QUT"/>
+                <constraint firstItem="omf-vw-0gD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="6aD-05-xSI"/>
+                <constraint firstAttribute="bottom" secondItem="IHp-ZT-B7D" secondAttribute="bottom" id="Lao-mr-ivt"/>
+                <constraint firstItem="IHp-ZT-B7D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZIa-Zu-eVI"/>
+                <constraint firstItem="omf-vw-0gD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="gw3-XT-tO6"/>
+                <constraint firstItem="9XU-Gv-H80" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="mfP-97-094"/>
+                <constraint firstAttribute="trailing" secondItem="9XU-Gv-H80" secondAttribute="trailing" constant="20" id="nva-Cr-Out"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addBloodSugar" destination="9XU-Gv-H80" id="tDZ-XV-tVZ"/>
+            </connections>
+            <point key="canvasLocation" x="294" y="63"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_food_add.png" width="35" height="19"/>
+    </resources>
+</document>

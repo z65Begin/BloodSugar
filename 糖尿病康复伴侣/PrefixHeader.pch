@@ -1,0 +1,47 @@
+//
+//  PrefixHeader.pch
+//  糖尿病康复伴侣
+//
+//  Created by liuyang on 16/2/2.
+//  Copyright © 2016年 ly. All rights reserved.
+//
+
+#ifdef __OBJC__
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIColor+changeRGBLY.h"
+#import "Reachability.h"
+#import "UtilCommon.h"
+#import "WebUtilsCommon.h"
+#import "UIBarButtonItem+LY.h"
+
+#import "MBProgressHUD.h"
+#import "MBProgressHUD/MBProgressHUD.h"
+
+#import "FileUtils.h"
+#import "SportFileUtils.h"//关于运动的文件操作
+
+#import "Masonry.h"
+#import "UIView+Frame.h"
+
+#import "IQKeyboardManager/IQKeyboardManager.h"
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+
+#import "SingleManager.h"
+#define W [UIScreen mainScreen].bounds.size.width
+#define H [UIScreen mainScreen].bounds.size.height
+#endif /* PrefixHeader_pch */
+
+#define blueColorWithRGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+
+#endif
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"[%s:%d行] %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif

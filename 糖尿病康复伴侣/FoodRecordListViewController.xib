@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoodRecordListViewController">
+            <connections>
+                <outlet property="addButton" destination="KEo-8j-rVg" id="5ZP-Fw-5pd"/>
+                <outlet property="nameLabel" destination="YFW-Ta-mg4" id="3Ef-MH-ybL"/>
+                <outlet property="tableView" destination="fUT-Ho-luK" id="plx-Rr-sJX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HR-tj-L6n">
+                    <rect key="frame" x="0.0" y="5" width="320" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上午加餐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFW-Ta-mg4">
+                            <rect key="frame" x="20" y="4" width="123" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="123" id="EsO-4L-7Rh"/>
+                                <constraint firstAttribute="height" constant="21" id="JMb-iu-U26"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.176293643" green="0.78935505370000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="YFW-Ta-mg4" firstAttribute="leading" secondItem="8HR-tj-L6n" secondAttribute="leading" constant="20" id="ZXi-lW-NQk"/>
+                        <constraint firstItem="YFW-Ta-mg4" firstAttribute="top" secondItem="8HR-tj-L6n" secondAttribute="top" constant="4" id="ox2-L7-UDP"/>
+                        <constraint firstAttribute="height" constant="30" id="tkZ-fR-lY2"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEo-8j-rVg">
+                    <rect key="frame" x="265" y="45" width="35" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="HcQ-kv-ztC"/>
+                        <constraint firstAttribute="height" constant="19" id="ziX-Qn-PqN"/>
+                    </constraints>
+                    <state key="normal" image="btn_food_add.png"/>
+                    <connections>
+                        <action selector="changeButtonClick:" destination="-1" eventType="touchUpInside" id="2tC-8r-RVx"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fUT-Ho-luK">
+                    <rect key="frame" x="0.0" y="74" width="320" height="406"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="lt0-Eu-saC"/>
+                        <outlet property="delegate" destination="-1" id="YL1-ew-o2I"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="fUT-Ho-luK" secondAttribute="bottom" id="0a6-hu-8qU"/>
+                <constraint firstAttribute="trailing" secondItem="KEo-8j-rVg" secondAttribute="trailing" constant="20" id="5QU-Mr-Slc"/>
+                <constraint firstItem="8HR-tj-L6n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="JjQ-SD-ZJW"/>
+                <constraint firstItem="fUT-Ho-luK" firstAttribute="top" secondItem="KEo-8j-rVg" secondAttribute="bottom" constant="10" id="Wf2-Uh-xTY"/>
+                <constraint firstAttribute="trailing" secondItem="fUT-Ho-luK" secondAttribute="trailing" id="bK0-tS-bXR"/>
+                <constraint firstAttribute="trailing" secondItem="8HR-tj-L6n" secondAttribute="trailing" id="fUU-yw-VD7"/>
+                <constraint firstItem="fUT-Ho-luK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nwp-y4-0SR"/>
+                <constraint firstItem="8HR-tj-L6n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="skU-8t-B0e"/>
+                <constraint firstItem="KEo-8j-rVg" firstAttribute="top" secondItem="8HR-tj-L6n" secondAttribute="bottom" constant="10" id="v1T-sO-hDM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_food_add.png" width="35" height="19"/>
+    </resources>
+</document>

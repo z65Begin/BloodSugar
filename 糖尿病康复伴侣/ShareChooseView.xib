@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShareChooseView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgC-fZ-ECg">
+                    <rect key="frame" x="60" y="135" width="200" height="82"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_wx_timeline.png" translatesAutoresizingMaskIntoConstraints="NO" id="v0c-qK-I5Q">
+                            <rect key="frame" x="125" y="6" width="49" height="49"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送给朋友" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd2-BT-uJm">
+                            <rect key="frame" x="4" y="63" width="97" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享到朋友圈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2x-la-z5V">
+                            <rect key="frame" x="101" y="63" width="97" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="gST-mk-q7B"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUw-Io-fQx">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="82"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="82" id="Shx-Ik-22M"/>
+                                <constraint firstAttribute="width" constant="100" id="SwJ-ll-Jbv"/>
+                            </constraints>
+                            <connections>
+                                <action selector="shareToFriend:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fcx-Fg-ElE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8T-pa-Pjo">
+                            <rect key="frame" x="100" y="0.0" width="100" height="82"/>
+                            <connections>
+                                <action selector="shareToTimeLine:" destination="iN0-l3-epB" eventType="touchUpInside" id="KqI-TI-k97"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_wx_chart.png" translatesAutoresizingMaskIntoConstraints="NO" id="o9f-dH-1Rw">
+                            <rect key="frame" x="28" y="6" width="49" height="49"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="9kU-N0-hwW"/>
+                        <constraint firstItem="kd2-BT-uJm" firstAttribute="leading" secondItem="ZgC-fZ-ECg" secondAttribute="leading" constant="4" id="BHp-lo-I3L"/>
+                        <constraint firstItem="v0c-qK-I5Q" firstAttribute="centerY" secondItem="o9f-dH-1Rw" secondAttribute="centerY" id="Bk3-Ny-Bgc"/>
+                        <constraint firstItem="L2x-la-z5V" firstAttribute="leading" secondItem="kd2-BT-uJm" secondAttribute="trailing" id="CuS-Ok-tdC"/>
+                        <constraint firstItem="L2x-la-z5V" firstAttribute="leading" secondItem="kd2-BT-uJm" secondAttribute="trailing" constant="24" id="DUG-5h-Gxv"/>
+                        <constraint firstItem="v0c-qK-I5Q" firstAttribute="width" secondItem="o9f-dH-1Rw" secondAttribute="width" id="DVm-gY-iVb"/>
+                        <constraint firstItem="m8T-pa-Pjo" firstAttribute="centerX" secondItem="ZgC-fZ-ECg" secondAttribute="centerX" constant="50" id="FY1-eq-UZf"/>
+                        <constraint firstItem="m8T-pa-Pjo" firstAttribute="firstBaseline" secondItem="cUw-Io-fQx" secondAttribute="firstBaseline" id="HQ4-9E-XFb"/>
+                        <constraint firstItem="m8T-pa-Pjo" firstAttribute="centerY" secondItem="cUw-Io-fQx" secondAttribute="centerY" id="K3l-c0-GTN"/>
+                        <constraint firstItem="L2x-la-z5V" firstAttribute="centerY" secondItem="kd2-BT-uJm" secondAttribute="centerY" id="NzD-bt-Z5r"/>
+                        <constraint firstItem="m8T-pa-Pjo" firstAttribute="height" secondItem="cUw-Io-fQx" secondAttribute="height" id="OVC-Cp-BCG"/>
+                        <constraint firstItem="cUw-Io-fQx" firstAttribute="centerX" secondItem="ZgC-fZ-ECg" secondAttribute="centerX" constant="-50" id="OY6-gT-ZZp"/>
+                        <constraint firstAttribute="bottom" secondItem="kd2-BT-uJm" secondAttribute="bottom" constant="4" id="QTG-Bg-asU"/>
+                        <constraint firstItem="cUw-Io-fQx" firstAttribute="top" secondItem="ZgC-fZ-ECg" secondAttribute="top" id="Tek-I0-emv"/>
+                        <constraint firstAttribute="trailing" secondItem="L2x-la-z5V" secondAttribute="trailing" constant="2" id="Z56-KO-qcy"/>
+                        <constraint firstItem="kd2-BT-uJm" firstAttribute="top" secondItem="o9f-dH-1Rw" secondAttribute="bottom" constant="8" id="Z6V-eK-T3z"/>
+                        <constraint firstAttribute="height" constant="82" id="d1H-uW-T13"/>
+                        <constraint firstItem="L2x-la-z5V" firstAttribute="width" secondItem="kd2-BT-uJm" secondAttribute="width" id="gUA-wb-l0I"/>
+                        <constraint firstItem="m8T-pa-Pjo" firstAttribute="width" secondItem="cUw-Io-fQx" secondAttribute="width" id="gWz-re-0iM"/>
+                        <constraint firstItem="cUw-Io-fQx" firstAttribute="baseline" secondItem="m8T-pa-Pjo" secondAttribute="baseline" id="iOr-IM-zON"/>
+                        <constraint firstItem="kd2-BT-uJm" firstAttribute="centerX" secondItem="o9f-dH-1Rw" secondAttribute="centerX" id="qUU-BW-d6d"/>
+                        <constraint firstItem="v0c-qK-I5Q" firstAttribute="height" secondItem="o9f-dH-1Rw" secondAttribute="height" id="sgp-cV-2XI"/>
+                        <constraint firstItem="L2x-la-z5V" firstAttribute="height" secondItem="kd2-BT-uJm" secondAttribute="height" id="vt8-mM-ixf"/>
+                        <constraint firstItem="v0c-qK-I5Q" firstAttribute="centerX" secondItem="L2x-la-z5V" secondAttribute="centerX" id="yZk-bf-njz"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="DUG-5h-Gxv"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="0.69832866379310343" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ZgC-fZ-ECg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RGL-MO-D4J"/>
+                <constraint firstItem="ZgC-fZ-ECg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-64" id="VSV-rp-Rc9"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_wx_chart.png" width="49" height="49"/>
+        <image name="img_wx_timeline.png" width="49" height="49"/>
+    </resources>
+</document>

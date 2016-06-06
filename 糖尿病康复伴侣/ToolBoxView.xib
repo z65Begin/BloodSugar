@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Xzn-Cl-d7g" customClass="ToolBoxView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMr-Ys-nLv">
+                    <rect key="frame" x="208" y="48" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="img_star_white.png"/>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wax-sz-v8O">
+                    <rect key="frame" x="68" y="206" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="img_recycle.png">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGb-JE-Hch">
+                    <rect key="frame" x="68" y="48" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="6xk-T8-be3"/>
+                        <constraint firstAttribute="height" constant="100" id="uo1-0c-gIv"/>
+                    </constraints>
+                    <state key="normal" image="img_apple.png"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食谱推荐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tl-de-Ob5">
+                    <rect key="frame" x="208" y="148" width="100" height="18"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="清理缓存" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2q8-aP-Lfz">
+                    <rect key="frame" x="68" y="306" width="100" height="18"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食物能量计算" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="old-qh-YvI">
+                    <rect key="frame" x="68" y="148" width="100" height="18"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2q8-aP-Lfz" firstAttribute="width" secondItem="SGb-JE-Hch" secondAttribute="width" id="0a3-CH-qOF"/>
+                <constraint firstItem="2q8-aP-Lfz" firstAttribute="centerX" secondItem="Xzn-Cl-d7g" secondAttribute="centerX" constant="-70" id="3Ko-91-LFE"/>
+                <constraint firstItem="SGb-JE-Hch" firstAttribute="top" secondItem="Xzn-Cl-d7g" secondAttribute="top" constant="48" id="3XM-Iq-S1u"/>
+                <constraint firstItem="Wax-sz-v8O" firstAttribute="height" secondItem="SGb-JE-Hch" secondAttribute="height" id="DEq-0v-pg5"/>
+                <constraint firstItem="old-qh-YvI" firstAttribute="top" secondItem="SGb-JE-Hch" secondAttribute="bottom" id="FMc-us-sgm"/>
+                <constraint firstItem="3Tl-de-Ob5" firstAttribute="width" secondItem="SGb-JE-Hch" secondAttribute="width" id="Fva-6z-t6A"/>
+                <constraint firstItem="old-qh-YvI" firstAttribute="width" secondItem="SGb-JE-Hch" secondAttribute="width" id="HDe-eN-ler"/>
+                <constraint firstItem="IMr-Ys-nLv" firstAttribute="height" secondItem="SGb-JE-Hch" secondAttribute="height" id="I0e-f6-SLy"/>
+                <constraint firstItem="Wax-sz-v8O" firstAttribute="width" secondItem="SGb-JE-Hch" secondAttribute="width" id="Nhh-uS-tX3"/>
+                <constraint firstItem="SGb-JE-Hch" firstAttribute="centerX" secondItem="Xzn-Cl-d7g" secondAttribute="centerX" constant="-70" id="OvY-fn-mEP"/>
+                <constraint firstItem="Wax-sz-v8O" firstAttribute="top" secondItem="old-qh-YvI" secondAttribute="bottom" constant="40" id="amq-fK-eZf"/>
+                <constraint firstItem="3Tl-de-Ob5" firstAttribute="centerX" secondItem="Xzn-Cl-d7g" secondAttribute="centerX" constant="70" id="cID-Z3-Pup"/>
+                <constraint firstItem="IMr-Ys-nLv" firstAttribute="centerX" secondItem="Xzn-Cl-d7g" secondAttribute="centerX" constant="70" id="ebx-fS-KGu"/>
+                <constraint firstItem="IMr-Ys-nLv" firstAttribute="width" secondItem="SGb-JE-Hch" secondAttribute="width" id="fu9-vd-M1g"/>
+                <constraint firstItem="2q8-aP-Lfz" firstAttribute="top" secondItem="Wax-sz-v8O" secondAttribute="bottom" id="gZK-To-wiD"/>
+                <constraint firstItem="old-qh-YvI" firstAttribute="centerX" secondItem="Xzn-Cl-d7g" secondAttribute="centerX" constant="-70" id="ljE-TR-pkl"/>
+                <constraint firstItem="IMr-Ys-nLv" firstAttribute="top" secondItem="Xzn-Cl-d7g" secondAttribute="top" constant="48" id="ofe-Yn-JO4"/>
+                <constraint firstItem="3Tl-de-Ob5" firstAttribute="top" secondItem="IMr-Ys-nLv" secondAttribute="bottom" id="xso-iz-ZfJ"/>
+                <constraint firstItem="Wax-sz-v8O" firstAttribute="centerX" secondItem="Xzn-Cl-d7g" secondAttribute="centerX" constant="-70" id="ysa-3n-quP"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cleanCache" destination="Wax-sz-v8O" id="9xM-4o-aKR"/>
+                <outlet property="foodEnergyCalculate" destination="SGb-JE-Hch" id="BVx-4O-0pB"/>
+                <outlet property="foodListRecommend" destination="IMr-Ys-nLv" id="WJr-Py-orh"/>
+            </connections>
+            <point key="canvasLocation" x="296.5" y="326.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_apple.png" width="130" height="130"/>
+        <image name="img_recycle.png" width="65" height="65"/>
+        <image name="img_star_white.png" width="32" height="32"/>
+    </resources>
+</document>

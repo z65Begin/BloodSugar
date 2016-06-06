@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SportListHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-2g-tg4">
+                    <rect key="frame" x="40" y="14" width="20" height="1"/>
+                    <color key="backgroundColor" red="0.176293643" green="0.78935505370000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="IOT-Yg-IbF"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIp-4E-hKc">
+                    <rect key="frame" x="5" y="5" width="35" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="Cye-y8-HKO"/>
+                        <constraint firstAttribute="height" constant="19" id="ml9-eI-cUN"/>
+                    </constraints>
+                    <state key="normal" image="btn_food_add.png"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有数据，点击按钮添加" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m3-kk-Iah">
+                    <rect key="frame" x="60" y="7" width="140" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="LI2-wM-wKW"/>
+                        <constraint firstAttribute="height" constant="15" id="gSa-TW-oc8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpw-GL-H4Y">
+                    <rect key="frame" x="21.5" y="24" width="1" height="6"/>
+                    <color key="backgroundColor" red="0.176293643" green="0.78935505370000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="6YI-9g-ktl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Qpw-GL-H4Y" secondAttribute="bottom" id="23K-IO-NiQ"/>
+                <constraint firstItem="6m3-kk-Iah" firstAttribute="leading" secondItem="dIp-4E-hKc" secondAttribute="trailing" constant="20" id="6TD-yo-Yj2"/>
+                <constraint firstItem="Qpw-GL-H4Y" firstAttribute="top" secondItem="dIp-4E-hKc" secondAttribute="bottom" id="6wl-Kv-flY"/>
+                <constraint firstItem="bm9-2g-tg4" firstAttribute="centerY" secondItem="dIp-4E-hKc" secondAttribute="centerY" id="Duc-IF-YgQ"/>
+                <constraint firstItem="6m3-kk-Iah" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-40" id="JGc-dZ-axo"/>
+                <constraint firstItem="6m3-kk-Iah" firstAttribute="centerY" secondItem="dIp-4E-hKc" secondAttribute="centerY" id="LqY-LQ-UWD"/>
+                <constraint firstItem="dIp-4E-hKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="X1K-NE-Sqj"/>
+                <constraint firstItem="dIp-4E-hKc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="X4J-gi-sU5"/>
+                <constraint firstItem="6m3-kk-Iah" firstAttribute="leading" secondItem="bm9-2g-tg4" secondAttribute="trailing" id="bhW-f3-OZH"/>
+                <constraint firstItem="Qpw-GL-H4Y" firstAttribute="centerX" secondItem="dIp-4E-hKc" secondAttribute="centerX" id="uMA-pV-tmt"/>
+                <constraint firstItem="bm9-2g-tg4" firstAttribute="leading" secondItem="dIp-4E-hKc" secondAttribute="trailing" id="wBf-Ut-qn7"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="JGc-dZ-axo"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="addNewButton" destination="dIp-4E-hKc" id="krU-nJ-Zfg"/>
+                <outlet property="hiddenView" destination="Qpw-GL-H4Y" id="lCw-Ea-2AW"/>
+                <outlet property="hiddenView1" destination="bm9-2g-tg4" id="p8b-YR-oNk"/>
+                <outlet property="hintLabel" destination="6m3-kk-Iah" id="qod-tB-VPM"/>
+            </connections>
+            <point key="canvasLocation" x="277" y="84"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_food_add.png" width="35" height="19"/>
+    </resources>
+</document>

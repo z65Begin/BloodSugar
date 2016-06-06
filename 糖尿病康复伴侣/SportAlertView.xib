@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SportAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="204"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teS-wp-eM1">
+                    <rect key="frame" x="15" y="5" width="136" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="136" id="BWg-86-2pq"/>
+                        <constraint firstAttribute="height" constant="21" id="b04-KL-0ko"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.176293643" green="0.78935505370000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FG-3g-OzU">
+                    <rect key="frame" x="0.0" y="31" width="320" height="2"/>
+                    <color key="backgroundColor" red="0.176293643" green="0.78935505370000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="7OA-JL-aFQ"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择运动效果:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecj-C9-rJG">
+                    <rect key="frame" x="15" y="38" width="164" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="164" id="1hX-p6-M1g"/>
+                        <constraint firstAttribute="height" constant="21" id="uI7-Vz-xt6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51J-CD-Khx">
+                    <rect key="frame" x="15" y="64" width="290" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="cFg-S1-47r"/>
+                    </constraints>
+                    <state key="normal" image="img_effect_00.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="正常呼吸，没有不适">
+                                <attributes>
+                                    <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected" image="img_effect_00.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="正常呼吸，没有不适">
+                                <attributes>
+                                    <color key="NSBackgroundColor" red="0.23921568627450979" green="0.67450980392156867" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="lvD-bc-FfN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfd-xK-RLo">
+                    <rect key="frame" x="15" y="91" width="290" height="22"/>
+                    <state key="normal" image="img_effect_01.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="呼吸加快，但可以与人正常交谈">
+                                <attributes>
+                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected" image="img_effect_01.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="呼吸加快，但可以与人正常交谈">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="gaP-dC-NSP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AX0-NM-ZV6">
+                    <rect key="frame" x="15" y="118" width="290" height="22"/>
+                    <state key="normal" image="img_effect_02.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="呼吸急促，还可以交谈，但有困难">
+                                <attributes>
+                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected" image="img_effect_02.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="呼吸急促，还可以交谈，但有困难">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="F7g-cJ-dB0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiK-zc-hst">
+                    <rect key="frame" x="15" y="145" width="290" height="22"/>
+                    <state key="normal" image="img_effect_03.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="气喘，甚至伴有胸闷等其他不适">
+                                <attributes>
+                                    <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected" image="img_effect_03.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="气喘，甚至伴有胸闷等其他不适">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="jUA-aC-e2M"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sG1-dk-hIb">
+                    <rect key="frame" x="0.0" y="172" width="320" height="32"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nj3-2Z-WZj">
+                            <rect key="frame" x="0.0" y="2" width="320" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="fM3-eP-UeK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <state key="normal" title="选择">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="ANy-tr-CTM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="nj3-2Z-WZj" firstAttribute="leading" secondItem="sG1-dk-hIb" secondAttribute="leading" id="BuW-2Q-c8n"/>
+                        <constraint firstItem="nj3-2Z-WZj" firstAttribute="top" secondItem="sG1-dk-hIb" secondAttribute="top" constant="2" id="QM0-Om-7Ma"/>
+                        <constraint firstAttribute="trailing" secondItem="nj3-2Z-WZj" secondAttribute="trailing" id="nga-eW-qWh"/>
+                        <constraint firstAttribute="height" constant="32" id="vvP-If-Hwn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="6FG-3g-OzU" firstAttribute="top" secondItem="teS-wp-eM1" secondAttribute="bottom" constant="5" id="1Gy-go-TrD"/>
+                <constraint firstAttribute="trailing" secondItem="sG1-dk-hIb" secondAttribute="trailing" id="4W5-Jj-575"/>
+                <constraint firstItem="6FG-3g-OzU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4Y0-tm-y1A"/>
+                <constraint firstAttribute="trailing" secondItem="51J-CD-Khx" secondAttribute="trailing" constant="15" id="69v-Km-SlL"/>
+                <constraint firstItem="51J-CD-Khx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="85O-Tv-yaz"/>
+                <constraint firstItem="nfd-xK-RLo" firstAttribute="height" secondItem="51J-CD-Khx" secondAttribute="height" id="8Ud-4O-27h"/>
+                <constraint firstItem="TiK-zc-hst" firstAttribute="height" secondItem="51J-CD-Khx" secondAttribute="height" id="Bhp-Qa-sul"/>
+                <constraint firstItem="AX0-NM-ZV6" firstAttribute="centerX" secondItem="51J-CD-Khx" secondAttribute="centerX" id="CvV-Nc-NUW"/>
+                <constraint firstItem="sG1-dk-hIb" firstAttribute="top" secondItem="TiK-zc-hst" secondAttribute="bottom" constant="5" id="DsX-Ch-edf"/>
+                <constraint firstAttribute="trailing" secondItem="6FG-3g-OzU" secondAttribute="trailing" id="FiZ-gM-4RD"/>
+                <constraint firstItem="teS-wp-eM1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="INn-XO-kFL"/>
+                <constraint firstItem="AX0-NM-ZV6" firstAttribute="width" secondItem="51J-CD-Khx" secondAttribute="width" id="LQd-bo-HIH"/>
+                <constraint firstItem="51J-CD-Khx" firstAttribute="top" secondItem="Ecj-C9-rJG" secondAttribute="bottom" constant="5" id="M3s-PW-kdn"/>
+                <constraint firstItem="TiK-zc-hst" firstAttribute="width" secondItem="51J-CD-Khx" secondAttribute="width" id="O1W-ut-SDp"/>
+                <constraint firstItem="Ecj-C9-rJG" firstAttribute="top" secondItem="6FG-3g-OzU" secondAttribute="bottom" constant="5" id="UrK-dl-X0S"/>
+                <constraint firstItem="teS-wp-eM1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="V4c-Et-FU7"/>
+                <constraint firstItem="TiK-zc-hst" firstAttribute="top" secondItem="AX0-NM-ZV6" secondAttribute="bottom" constant="5" id="WOF-9s-r3M"/>
+                <constraint firstItem="nfd-xK-RLo" firstAttribute="top" secondItem="51J-CD-Khx" secondAttribute="bottom" constant="5" id="ayL-m7-AwH"/>
+                <constraint firstItem="sG1-dk-hIb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="b8C-pM-WZ9"/>
+                <constraint firstItem="AX0-NM-ZV6" firstAttribute="height" secondItem="51J-CD-Khx" secondAttribute="height" id="dd2-H1-5Lk"/>
+                <constraint firstItem="nfd-xK-RLo" firstAttribute="centerX" secondItem="51J-CD-Khx" secondAttribute="centerX" id="eqg-Xk-Twq"/>
+                <constraint firstItem="TiK-zc-hst" firstAttribute="centerX" secondItem="51J-CD-Khx" secondAttribute="centerX" id="fne-db-zCj"/>
+                <constraint firstItem="Ecj-C9-rJG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="jx9-Nv-BWY"/>
+                <constraint firstItem="AX0-NM-ZV6" firstAttribute="top" secondItem="nfd-xK-RLo" secondAttribute="bottom" constant="5" id="m33-lE-gpM"/>
+                <constraint firstItem="nfd-xK-RLo" firstAttribute="width" secondItem="51J-CD-Khx" secondAttribute="width" id="sHt-rq-6v6"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button1" destination="51J-CD-Khx" id="gVd-AF-NIL"/>
+                <outlet property="button2" destination="nfd-xK-RLo" id="mar-IH-k1U"/>
+                <outlet property="button3" destination="AX0-NM-ZV6" id="K9k-Qn-L64"/>
+                <outlet property="button4" destination="TiK-zc-hst" id="Fx6-8z-tky"/>
+                <outlet property="chooseButton" destination="nj3-2Z-WZj" id="ep6-oV-uaa"/>
+            </connections>
+            <point key="canvasLocation" x="308" y="148"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_effect_00.png" width="17" height="17"/>
+        <image name="img_effect_01.png" width="17" height="17"/>
+        <image name="img_effect_02.png" width="17" height="17"/>
+        <image name="img_effect_03.png" width="17" height="17"/>
+    </resources>
+</document>
