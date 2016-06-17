@@ -26,7 +26,7 @@
 //医生编号
 @property (nonatomic, copy) NSString * docID;
 //医生姓名
-@property (nonatomic, copy) NSString *docName;
+@property (nonatomic, copy) NSString * docName;
 
 //@property (nonatomic, copy) NSString *;
 @end

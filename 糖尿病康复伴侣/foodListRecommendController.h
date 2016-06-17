@@ -10,4 +10,5 @@
 
 @interface foodListRecommendController : UIViewController
 @property(nonatomic)NSString * userID;
+@property (nonatomic, copy) NSString * date;
 @end

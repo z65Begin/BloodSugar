@@ -17,16 +17,23 @@
     // Drawing code
 }
 */
+- (void)awakeFromNib{
+    self.explain.layer.borderColor = blueColorWithRGB(61, 172, 225).CGColor;
+    self.explain.layer.borderWidth = 1.0f;
+    self.explain.layer.cornerRadius = 8.0f;
+}
+
+
 +(id)medicinalWriteView
 {
     NSArray * objs = [[NSBundle mainBundle]loadNibNamed:@"MedicalWriteView" owner:nil options:nil];
     return [objs lastObject];
 }
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    [textField resignFirstResponder];
-    
-    return YES;
-}
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+//    
+//    [textField resignFirstResponder];
+//    
+//    return YES;
+//}
 
 @end

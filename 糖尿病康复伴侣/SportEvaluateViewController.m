@@ -46,7 +46,7 @@
     // Do any additional setup after loading the view from its nib.
     
 //    self.date = @"2016-04-28";
-    self.sportEnergy = 258;
+//    self.sportEnergy = 258;
     self.animationView.layer.cornerRadius = 50.0f;
     self.animationView.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.animationView.layer.borderWidth = 1.0f;
@@ -118,7 +118,7 @@
     [self.animationView addSubview:lxmView];
     [self.animationView bringSubviewToFront:self.littleView];
     
-    
+    self.tableView.allowsSelection = NO;
 }
 #pragma mark 分享按钮点击事件
 - (void)shareBtnClick:(UIButton *)sender{

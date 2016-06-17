@@ -88,7 +88,7 @@
     collectiontableView.delegate = self;
     collectiontableView.dataSource = self;
     [self.view addSubview:collectiontableView];
-
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -96,6 +96,9 @@
     return self.dataSouceMArray.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.001;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   
@@ -109,7 +112,7 @@
 //    *serialNumber;//序号
 // remarks;//备注
 //collectTime;//收藏时间
-    cell.serialNumber.text = [NSString stringWithFormat:@"%ld",indexPath.row+1];
+    cell.serialNumber.text = [NSString stringWithFormat:@"%d",(int)indexPath.row+1];
     collectionModel * model = self.dataSouceMArray[indexPath.row];
     
     cell.remarks.text =model.Comment;
@@ -181,7 +184,6 @@ if(buttonIndex == 1)
     
 }
 
-
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -191,13 +193,11 @@ if(buttonIndex == 1)
   self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"返回"style:UIBarButtonItemStylePlain target:nil action:nil];
     
     collectionDetailController * detail = [[collectionDetailController alloc]init];
+    detail.date = self.date;
     [self.navigationController pushViewController:detail animated:YES];
   
-  collectionModel * model =   self.dataSouceMArray[indexPath.row];
-
+    collectionModel * model =   self.dataSouceMArray[indexPath.row];
     detail.menuID =model.mid;
-
-
 }
 /*
 #pragma mark - Navigation

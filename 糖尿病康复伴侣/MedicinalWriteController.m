@@ -16,7 +16,7 @@
 
 //排序用头文件
 //#import "ChineseString.h"
-@interface MedicinalWriteController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UISearchBarDelegate>{
+@interface MedicinalWriteController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>{
     NSMutableArray *_sectionHeadsKeys;//存放索引的数组
     NSMutableArray *_AbcSort;   //排序整理后的数组
     MedicalWriteView * medicinalView;//药物视图
@@ -59,6 +59,14 @@
 }
 
 #pragma mark -- 生命周期
+//- (void)loadView{
+//    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    scrollView.multipleTouchEnabled = YES;
+//    scrollView.exclusiveTouch = YES;
+//    scrollView.userInteractionEnabled = YES;
+//    self.view = scrollView;
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -75,19 +83,19 @@
     //    NSLog(@"medicineNameArr%@",self.medicineNameArr);
 //    NSArray *  array = [FileUtils readMedicineRecordWithUID:self.userID];
    }
-#pragma mark --createSearchBar
-
--(void)createSearchBar{
-    searchbar = [[UISearchBar alloc]initWithFrame:CGRectMake(-10, 0, [UIScreen mainScreen].bounds.size.width+20, 30)];
-    
-    searchbar.placeholder = @"输入药品名称";
-    
-    searchbar.keyboardType = UIKeyboardAppearanceDefault;
-    
-    searchbar.delegate = self;
-    
-    [medicinalView addSubview:searchbar];
-}
+//#pragma mark --createSearchBar
+//
+//-(void)createSearchBar{
+//    searchbar = [[UISearchBar alloc]initWithFrame:CGRectMake(-10, 0, [UIScreen mainScreen].bounds.size.width+20, 30)];
+//    
+//    searchbar.placeholder = @"输入药品名称";
+//    
+//    searchbar.keyboardType = UIKeyboardAppearanceDefault;
+//    
+//    searchbar.delegate = self;
+//    
+//    [medicinalView addSubview:searchbar];
+//}
 
 #pragma mark --createMedicinalView
 -(void)createMedicinalView{
@@ -125,13 +133,6 @@
          *UpdTime更新时间
          */
         self.model.MedName = model.Name;
-//        self.MedicineID = model.sid;
-//        self.MedName = model.Name;
-//        self.AmountTimes = medicinalView.eatTimesEveryDay.text;
-//        self.AMountUnit = medicinalView.everyTimesUsed.text;
-//        self.UnitName = medicinalView.everyTimesunit.text;
-//        self.Notes = medicinalView.explain.text;
-        
     };
 
 }
@@ -157,8 +158,8 @@
     [uv addGestureRecognizer:tapGR];
     [medicinalView addSubview:uv];
     [medicinalView addSubview:tableview];
-    
 }
+
 - (void)backgroundViewClick:(UITapGestureRecognizer *)tapGR{
     UIView * view = tapGR.view;
     [view removeFromSuperview];
@@ -295,14 +296,14 @@
     }
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    UIView * uv = [self.view viewWithTag:100];
-    [medicinalView.medicinalNameTF resignFirstResponder];
-    [medicinalView.eatTimesEveryDay resignFirstResponder];
-    [medicinalView.everyTimesUsed resignFirstResponder];
-    [medicinalView.everyTimesunit resignFirstResponder];
-    [medicinalView.explain resignFirstResponder];
-}
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+////    UIView * uv = [self.view viewWithTag:100];
+//    [medicinalView.medicinalNameTF resignFirstResponder];
+//    [medicinalView.eatTimesEveryDay resignFirstResponder];
+//    [medicinalView.everyTimesUsed resignFirstResponder];
+//    [medicinalView.everyTimesunit resignFirstResponder];
+//    [medicinalView.explain resignFirstResponder];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

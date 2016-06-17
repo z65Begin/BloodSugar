@@ -92,7 +92,7 @@
     self.hostReachability = [Reachability reachabilityWithHostName:remoteHostName];
     [self.hostReachability startNotifier];
     //    站内信
-    NSArray *innerMailArr = nil;
+    NSData *innerMailArr = nil;
     NSString * newUpdateTime = nil;
     NSString * userID = [SingleManager sharedSingleManager].InfoModel.UID;
     
@@ -109,11 +109,12 @@
         }
     }
     
-    if (innerMailArr != nil && innerMailArr.count > 0) {
+    if (innerMailArr) {
         //显示有未读邮件
         //[_emailBtn setImage:[UIImage imageNamed:@"btn_email.png"] forState:UIControlStateNormal];
-        //将新的站内信写入本地文件
-        [FileUtils writeInnerMail:innerMailArr andUid:userID andNewUpdateTime:newUpdateTime];
+        //将新的站 内信写入本地文件
+
+        [FileUtils writeInnerMailWithUID:userID andServerData:innerMailArr];
     }
 }
 

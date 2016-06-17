@@ -10,4 +10,6 @@
 
 @interface HomePageController : UIViewController
 @property(nonatomic)NSString * UserID;
+//刷新按钮点击事件
+- (void)refreshDoctorView;
 @end

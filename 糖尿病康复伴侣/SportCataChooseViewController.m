@@ -32,7 +32,11 @@
      self.dataSource = [[FileUtils readSid] copy];
     self.sureBtn.enabled = NO;
     
-    self.navigationController.navigationBarHidden = YES;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!self.navigationController.navigationBarHidden) {
+            self.navigationController.navigationBarHidden = YES;
+        }
+    });
     
 }
 #pragma mark tableView Datasource&& Delegate

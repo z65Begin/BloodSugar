@@ -131,30 +131,36 @@
     foodDetailController * detail = [[foodDetailController alloc]init];
     [self.navigationController pushViewController:detail animated:YES];
     
+//    detail.eatFoodTime = model.TimePeriod;
+//    detail.foodId = model.FoodId;
+//    detail.date = self.date;
+//    detail.Intaketf = model.FoodIntake;
     if (indexPath.section == 0) {
-        detail.eatFoodTime = @"早餐";
+        detail.eatFoodTime = DIET_TIMEPER_BRFFAST;
         FoodListRecommendModel * RecommendModel = breakfastArray[indexPath.row];
         detail.foodId =RecommendModel.FoodId;
         detail.Intaketf = RecommendModel.FoodIntake;
+        
     }else if (indexPath.section == 1){
-        detail.eatFoodTime = @"午餐";
+        detail.eatFoodTime = DIET_TIMEPER_LUNCH;
         FoodListRecommendModel * RecommendModel = lunchArray[indexPath.row];
         detail.foodId =RecommendModel.FoodId;
         detail.Intaketf = RecommendModel.FoodIntake;
         
         
     }else if (indexPath.section == 2){
-        detail.eatFoodTime = @"晚餐";
+        detail.eatFoodTime = DIET_TIMEPER_DINNER;
         FoodListRecommendModel * RecommendModel = dinnerArray[indexPath.row];
         detail.foodId =RecommendModel.FoodId;
         detail.Intaketf = RecommendModel.FoodIntake;
     }
+    detail.date = self.date;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, W, 70)];
+    UILabel *label1=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, W, 30)];
     label1.backgroundColor=[UIColor colorWithRed:37/255.0 green:122/255.0 blue:247/255.0 alpha:1.0];
     label1.textColor = [UIColor whiteColor];
-    label1.font = [UIFont systemFontOfSize:25];
+    label1.font = [UIFont systemFontOfSize:20];
     if (section == 0)
     {
         label1.text=@"早餐";
@@ -172,9 +178,7 @@
     return 0;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
-    
-    return 70;
+    return 30;
 }
 /*
 #pragma mark - Navigation

@@ -93,6 +93,8 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
 
 @property (nonatomic, strong) MBProgressHUD * HUD;
 
+@property (nonatomic, weak) NSArray * foodArray;
+
 @end
 
 @implementation HomePageController
@@ -127,11 +129,17 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     //    读取 用户饮食记录 问题
-    self.navigationController.navigationBarHidden = NO;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.navigationController.navigationBarHidden) {
+            self.navigationController.navigationBarHidden = NO;
+        }
+    });
     if (self.homeScrollView.contentOffset.x == 0) {
         if (self.healthView) {
-
+            NSArray * foodRecordArray = [FileUtils readFoodRecordWithUserID:self.UserID andDate:self.date];
+            if (![self.foodArray isEqualToArray:foodRecordArray]) {
             [self change];
+            }
         }
     }
     
@@ -407,6 +415,7 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
 - (void)change{
     //    摄入热量 食物摄入
     NSArray * foodRecordArray = [FileUtils readFoodRecordWithUserID:self.UserID andDate:self.date];
+    self.foodArray = foodRecordArray;
 //    TOCK;
     CGFloat foodHeight = [self.healthView changeWithFoodRecordArray:foodRecordArray];
     
@@ -435,10 +444,15 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
     }
     NSArray * sportArray = [FileUtils readSportRecordWithUID:self.UserID andDate:self.date];
     float sportEnergy = 0;
-    for (SportRecordModel* model in sportArray) {
-        sportCataModel* cataModel = [SportFileUtils readSportCataWith:model.Type];
-        sportEnergy += (cataModel.Energy.floatValue * model.TimeLength.floatValue/60);
+    if (sportArray.count) {
+        for (SportRecordModel* model in sportArray) {
+            sportCataModel* cataModel = [SportFileUtils readSportCataWith:model.Type];
+            sportEnergy += (cataModel.Energy.floatValue * model.TimeLength.floatValue/60);
+        }
+    }else{
+        sportEnergy = 0;
     }
+    
     
     dispatch_async(dispatch_get_main_queue(), ^{
        self.healthView.healthHeadView.movementLabel.text = [NSString stringWithFormat:@"%d千卡",(int)sportEnergy];
@@ -618,7 +632,6 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
     [self.navigationController pushViewController:foodEvaluateVC animated:YES];
 }
 - (void)sportEvaluateBtnClick:(UIButton*)sender{
-   
     self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"返回"style:UIBarButtonItemStylePlain target:nil action:nil];
     SportEvaluateViewController * sportEvaluateVC = [[SportEvaluateViewController alloc]init];
     sportEvaluateVC.date = self.date;
@@ -697,8 +710,16 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
     }
     chat.advisory = advisory;
     [self.navigationController pushViewController:chat animated:YES];
+    advisory.isNew = @"false";
     
     [FileUtils chatHistoryWithUid:self.UserID And:advisory.idAddress type:isDoctor];
+    [FileUtils changeStatus:advisory andUserId:self.UserID];
+    self.dataSource = [[FileUtils readAdvisoryDataWithUID:self.UserID] copy];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.doctorView.tableView reloadData];
+    });
+    
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.001;
@@ -716,6 +737,7 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
     foodListRecommendController * listRecommend  = [[foodListRecommendController alloc]init];
     [self.navigationController pushViewController:listRecommend animated:YES];
     listRecommend.userID = self.UserID;
+    listRecommend.date = self.date;
 }
 #pragma mark -2- 清理缓存页面
 -(void)cx_cleanCache{
@@ -841,6 +863,15 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
     }else if(self.homeScrollView.contentOffset.x == 2*W){
         [self toolBtnClick];
     }
+    if (self.homeScrollView.contentOffset.x == 0) {
+        if (self.healthView) {
+            NSArray * foodRecordArray = [FileUtils readFoodRecordWithUserID:self.UserID andDate:self.date];
+            if (![self.foodArray isEqualToArray:foodRecordArray]) {
+                [self change];
+            }
+        }
+    }
+
 }
 #pragma mark  下载咨询方面的数据
 -(void)downConsultData{
@@ -963,7 +994,7 @@ static NSString * cellIdentifier = @"TableViewDoctorCell";
             break;
     }
 }
-#pragma mark 医生咨询按钮点击事件 咨询界面tableview datasource && delegate
+#pragma mark 医生咨询---刷新---按钮点击事件 咨询界面tableview datasource && delegate
 //咨询界面
 -(void)consult:(UIButton *)button{
     consultViewController * consult = [[consultViewController alloc]init];

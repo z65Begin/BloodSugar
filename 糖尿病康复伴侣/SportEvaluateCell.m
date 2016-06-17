@@ -86,7 +86,11 @@
     }
     self.timeLabel.text = timeStr;
     
-    float scale = model.TimeLength.intValue/60 * cataModel.Energy.floatValue/self.sportEnergy*100;
+    float scale = 1;
+    if (self.sportEnergy) {
+        scale  = model.TimeLength.floatValue/60.0 * cataModel.Energy.floatValue/self.sportEnergy;
+    }
+  
     self.valueLabel.text = [NSString stringWithFormat:@"%.1f%%",scale];
     self.scale = scale;
 
@@ -96,12 +100,12 @@
 //    extern NSString * const SPORT_Result_03;//气喘 甚至伴有胸闷等其他不适
     self.imageV.image = [UIImage imageNamed:[NSString stringWithFormat:@"img_effect_%@",model.Result]];
     NSString* stepBase = [FileUtils getValueUsingcode:@"001"];
-    int energyNeed = (int)model.TimeLength.intValue/60 * cataModel.Energy.floatValue;
+    float energyNeed = (float)model.TimeLength.floatValue/60.0 * cataModel.Energy.floatValue;
     int stepNeed = (int)stepBase.floatValue *model.TimeLength.intValue/60 * cataModel.Energy.floatValue;
-    self.energyLabel.text = [NSString stringWithFormat:@"%d步/%d千卡",stepNeed,energyNeed];
+    self.energyLabel.text = [NSString stringWithFormat:@"%d步/%.2f千卡",stepNeed,energyNeed];
 }
 - (void)layoutSubviews{
-    self.valueViewRight.constant = 15+(W-100)-self.scale*(W-100)/100;
+    self.valueViewRight.constant = 15 +(1 - self.scale)*(W-100);
 }
 
 

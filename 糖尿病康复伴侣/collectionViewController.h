@@ -10,4 +10,6 @@
 
 @interface collectionViewController : UIViewController
 
+@property (nonatomic, copy) NSString * date;
+
 @end

@@ -47,6 +47,7 @@
     }else{
         self.readLabel.hidden = YES;
     }
+//    self.readLabel.hidden = YES;
     self.titleLabel.text = model.title;
     if (model.docID.length||model.docName.length) {
         self.authorLabel.text = [NSString stringWithFormat:@"(%@)",model.docName];

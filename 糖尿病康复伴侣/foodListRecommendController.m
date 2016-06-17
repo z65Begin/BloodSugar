@@ -150,6 +150,7 @@
 #pragma mark -- 跳转收藏夹
 -(void)collect{
     collectionViewController * collection = [[collectionViewController alloc]init];
+    collection.date = self.date;
     [self.navigationController pushViewController:collection animated:YES];
 }
 
@@ -289,7 +290,7 @@
     FoodListRecommendModel * model = [allArray[indexPath.section]objectAtIndex:indexPath.row];
     detail.eatFoodTime = model.TimePeriod;
     detail.foodId = model.FoodId;
-    detail.date = [FileUtils getLocalDate];
+    detail.date = self.date;
     detail.Intaketf = model.FoodIntake;
 }
 

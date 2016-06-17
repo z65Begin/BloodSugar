@@ -79,7 +79,12 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
-    self.navigationController.navigationBarHidden = NO;
+dispatch_async(dispatch_get_main_queue(), ^{
+    if (self.navigationController.navigationBarHidden) {
+        self.navigationController.navigationBarHidden = NO;
+    }
+});
+    
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[[UIView alloc]init]];
     self.navigationItem.title = @"个人信息";
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -164,7 +169,12 @@
                 if ([WebUtilsCommon upUserInfoUseModel:model]) {
                     [UtilCommon alertView:@"" andMessage:@"上传成功"];
                     //                写入本地
-                    [FileUtils writeUserInfo:model.UID andInfo:model];
+//                    [FileUtils writeUserInfo:model.UID andInfo:model];
+                    UserInfoModel * personInfomodel = [WebUtilsCommon getUserInfoFromServer:[SingleManager  sharedSingleManager].InfoModel.UID];
+                    
+                    [SingleManager sharedSingleManager].InfoModel = personInfomodel;
+                    [FileUtils writeUserInfo:personInfomodel.UID andInfo:personInfomodel];
+                    
                 }else{
                     [UtilCommon alertView:@"错误" andMessage:@"上传个人信息失败"];
                 }
@@ -222,7 +232,7 @@
     NSString * name = [user objectForKey:USER_ID];
     UserInfoModel * infoModel = [FileUtils readUserInfo:name];
     NSLog(@"%@",infoModel.InfoSet);
-    if ([infoModel.InfoSet isEqualToString:@"0"] && self.navigationController.viewControllers.count == 2) {
+    if ([infoModel.InfoSet isEqualToString:@"1"] && self.navigationController.viewControllers.count == 2) {
         [self.navigationController popViewControllerAnimated:NO];
         if (self.changeViewController) {
             self.changeViewController(infoModel.UID);
@@ -838,7 +848,6 @@ else return @"2";
 
 //神经系统点击事件
 -(void)nervousSystem:(UIButton * )sender{
-    
             if(sender.tag == 10050){
         person.nervousSystem.selected =!person.nervousSystem.selected;
         if (person.nervousSystem.selected == NO) {
@@ -1570,9 +1579,9 @@ else return @"2";
 }
 #pragma mark ScrollViewDelegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self.view endEditing:YES];
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    [self.view endEditing:YES];
+//}
 
 
 - (void)didReceiveMemoryWarning {

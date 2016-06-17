@@ -10,6 +10,11 @@
 #import "RegisterView.h"
 #import "Base64codeFunc.h"
 #import "GDataXMLNode.h"
+
+#import "Reachability.h"
+
+#import "MBProgressHUD+MJ.h"
+
 @interface RegisterController ()
 @property(nonatomic,strong)RegisterView * registerView;
 @end
@@ -100,9 +105,17 @@
     [self.registerView.womanBtn addTarget:self action:@selector(womanBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
 }
 -(void)viewWillAppear:(BOOL)animated{
- [self getcodeimage];
-     self.navigationController.navigationBar.hidden = NO;
-    self.navigationController.navigationBarHidden = NO;
+    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
+        [MBProgressHUD showMessage:@"未检测到网络连接，请检查您的网络连接后重试"];
+    }else{
+     [self getcodeimage];
+    }
+    self.navigationController.navigationBar.hidden = NO;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.navigationController.navigationBarHidden) {
+            self.navigationController.navigationBarHidden = NO;
+        }
+    });
 }
 -(void)getcodeimage{
     NSURL *url = [NSURL URLWithString:@"http://www.halsma.com/healthdiabetes/client/getVerifyCode?dataStr="];

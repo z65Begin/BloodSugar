@@ -20,7 +20,7 @@
         [button setBackgroundImage:[UIImage imageNamed:highIcon] forState:UIControlStateHighlighted];
     }
 //    if (button.currentImage) {
-         button.bounds = (CGRect){CGPointZero,button.currentBackgroundImage.size.width/2.6,button.currentBackgroundImage.size.height/2.6};
+         button.frame = (CGRect){CGPointZero,button.currentBackgroundImage.size.width/2.6,button.currentBackgroundImage.size.height/2.6};
 //    }else{
 //        button.bounds = CGRectZero;
 //    }

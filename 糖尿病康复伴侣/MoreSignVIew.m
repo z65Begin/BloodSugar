@@ -45,8 +45,6 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
 
-    
-    
     return YES;
 }
 
@@ -54,7 +52,7 @@
 + (instancetype)viewWithXIB{
     MoreSignVIew * view = [[[NSBundle mainBundle]loadNibNamed:@"MoreSignView" owner:self options:nil] firstObject];
     CGRect frame = [UIScreen mainScreen].bounds;
-    frame.size.height = 720;
+    frame.size.height = 1000;
     view.frame = frame;
     return view;
 }

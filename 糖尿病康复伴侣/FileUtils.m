@@ -201,7 +201,7 @@
     //    切割字符串用DocSplit
     NSArray * array=[str1 componentsSeparatedByString:@"DocSplit"];
     
-    NSString *dataStr = array[1];
+    NSString *dataStr = array[1] ;
     NSData * finalData = [NSData dataWithData:[dataStr dataUsingEncoding:NSUTF8StringEncoding]];
 
     return [self isCreateFile:fileName andContent:[[NSString alloc] initWithData:finalData encoding:NSUTF8StringEncoding]];
@@ -1896,7 +1896,7 @@
     GDataXMLElement *rootEle = [doc rootElement];
     NSString * str = [NSString stringWithFormat:@"./FoodList/Food[@id='%@']",foodId];
     NSArray *aryNode=[rootEle nodesForXPath:str error:nil];
-    NSString * foodName = [[[aryNode[0]elementsForName:NAME]firstObject]stringValue];
+    NSString * foodName = [[[[aryNode firstObject] elementsForName:NAME]firstObject]stringValue];
     return foodName;
 }
 /**
@@ -2422,6 +2422,55 @@
     }
     
     return  [FileUtils isCreateFile:fileName_docinstruc andContent:[[NSString alloc] initWithData:doc_docinstruc.XMLData encoding:NSUTF8StringEncoding]]&& [FileUtils isCreateFile:fileName_docinstruc_reply andContent:[[NSString alloc] initWithData:doc_docinstruc_reply.XMLData encoding:NSUTF8StringEncoding]];
+}
+/**
+ *  修改用户读取状态
+ *
+ *  @param model  数据模型
+ *  @param userId 用户id
+ *
+ *  @return 更改是否成功
+ */
++ (BOOL)changeStatus:(cx_Advisory *) model andUserId:(NSString *)userId{
+    if ((model.docID.length && ![model.docID isEqualToString:@""] ) ||( model.docName.length &&![model.docName isEqualToString:@""] )) {
+//        保存到医生建议
+        NSString * fileName = [userId stringByAppendingString:DOCTORINSTRUCTFILENAME];
+        NSData * fileData = [self findFileWithUserId:userId andSubfix:DOCTORINSTRUCTFILENAME];
+        GDataXMLDocument * document = [[GDataXMLDocument alloc]initWithData:fileData options:0 error:nil];
+        GDataXMLElement * rootEle = [document rootElement];
+        GDataXMLElement * recordEle = [[rootEle elementsForName:Record]firstObject];
+        
+        NSString * xpath = [NSString stringWithFormat:@"./Instruct[@id='%@']",model.idAddress];
+        GDataXMLElement * advisory = [[recordEle nodesForXPath:xpath error:nil]firstObject];
+        if (advisory) {
+            GDataXMLElement * isNewEle = [[advisory elementsForName:@"IsNew"] firstObject];
+            [isNewEle setStringValue:model.isNew];
+            
+            NSString * content = [[NSString alloc]initWithData:document.XMLData encoding:NSUTF8StringEncoding];
+            return  [self isCreateFile:fileName andContent:content];
+        }
+    }
+//    保存到咨询数据
+    NSString * fileName = [userId stringByAppendingString:ASVISORYFILENAME];
+    NSData * fileData = [self findFileWithUserId:userId andSubfix:ASVISORYFILENAME];
+    GDataXMLDocument * document = [[GDataXMLDocument alloc]initWithData:fileData options:0 error:nil];
+    GDataXMLElement * rootEle = [document rootElement];
+    GDataXMLElement * recordEle = [[rootEle elementsForName:Record]firstObject];
+    
+   
+    NSString * xpath = [NSString stringWithFormat:@"./Advisory[@id='%@']",model.idAddress];
+    GDataXMLElement * advisory = [[recordEle nodesForXPath:xpath error:nil]firstObject];
+    if (advisory) {
+        GDataXMLElement * isNewEle = [[advisory elementsForName:@"IsNew"] firstObject];
+        [isNewEle setStringValue:model.isNew];
+        
+        NSString * content = [[NSString alloc]initWithData:document.XMLData encoding:NSUTF8StringEncoding];
+        return  [self isCreateFile:fileName andContent:content];
+    }
+    
+    
+    
+    return YES;
 }
 
 //用户咨询数据

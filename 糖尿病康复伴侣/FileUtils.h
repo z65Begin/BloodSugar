@@ -18,6 +18,8 @@
 @class BloodSugarModel;    //血糖模型
 @class BodySignModel;      //体征模型
 
+@class cx_Advisory;
+
 @interface FileUtils : NSObject
 //获取本地时间YYYY-MM-dd格式
 +(NSString *)getLocalDate;
@@ -382,5 +384,15 @@
 + (NSArray*)readAdvisoryDataWithUID:(NSString *)uid;
 // 获取用户聊天数据 uid 用户id  chatid 数据id  isDoctor 是否是医生
 + (NSArray *)chatHistoryWithUid:(NSString *)uid And:(NSString *)chatId type:(BOOL)isDoctor;
+
+/**
+ *  修改用户读取状态
+ *
+ *  @param model  数据模型
+ *  @param userId 用户id
+ *
+ *  @return 更改是否成功
+ */
++ (BOOL)changeStatus:(cx_Advisory *) model andUserId:(NSString *)userId;
 
 @end

@@ -94,6 +94,8 @@
 		84A7DC701CE462BD00581760 /* ShareChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7DC6F1CE462BD00581760 /* ShareChooseView.xib */; };
 		84A7DC711CE462BD00581760 /* ShareChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7DC6F1CE462BD00581760 /* ShareChooseView.xib */; };
 		84A7DC721CE462BD00581760 /* ShareChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7DC6F1CE462BD00581760 /* ShareChooseView.xib */; };
+		84BD1D541D07BE26008AE06B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BD1D531D07BE26008AE06B /* Accelerate.framework */; };
+		84BD1D561D07BE3D008AE06B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BD1D551D07BE3D008AE06B /* Social.framework */; };
 		84C4BCBE1CCBBB7A00CA9803 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BCBB1CCBBB7A00CA9803 /* MessageCell.m */; };
 		84C4BCBF1CCBBB7A00CA9803 /* MessageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BCBD1CCBBB7A00CA9803 /* MessageFrame.m */; };
 		84C6E28E1CDEDB6C003F5957 /* CXChooseDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E28D1CDEDB6C003F5957 /* CXChooseDateView.m */; };
@@ -351,7 +353,6 @@
 		CDE04F1C1C61A8B900011413 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE04F1B1C61A8B900011413 /* FileUtils.m */; };
 		CDE04F201C61A9BF00011413 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE04F1F1C61A9BF00011413 /* UserInfoModel.m */; };
 		CDE04F261C61C79300011413 /* KeyChainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE04F251C61C79300011413 /* KeyChainHelper.m */; };
-		CDE04F2E1C61CCCC00011413 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE04F2D1C61CCCC00011413 /* AVFoundation.framework */; };
 		CDE04F351C61D7BD00011413 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE04F341C61D7BD00011413 /* libxml2.dylib */; };
 		CDE04F3A1C61E42200011413 /* WebUtilsCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE04F391C61E42200011413 /* WebUtilsCommon.m */; };
 /* End PBXBuildFile section */
@@ -509,6 +510,8 @@
 		84A7DC6A1CE462B300581760 /* ShareChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareChooseView.h; sourceTree = "<group>"; };
 		84A7DC6B1CE462B300581760 /* ShareChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareChooseView.m; sourceTree = "<group>"; };
 		84A7DC6F1CE462BD00581760 /* ShareChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareChooseView.xib; sourceTree = "<group>"; };
+		84BD1D531D07BE26008AE06B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		84BD1D551D07BE3D008AE06B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84C4BCBA1CCBBB7A00CA9803 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
 		84C4BCBB1CCBBB7A00CA9803 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		84C4BCBC1CCBBB7A00CA9803 /* MessageFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageFrame.h; sourceTree = "<group>"; };
@@ -865,17 +868,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A7DC631CE4537300581760 /* CoreTelephony.framework in Frameworks */,
+				84BD1D561D07BE3D008AE06B /* Social.framework in Frameworks */,
+				84BD1D541D07BE26008AE06B /* Accelerate.framework in Frameworks */,
 				84A7DC691CE4539D00581760 /* SystemConfiguration.framework in Frameworks */,
 				84A7DC671CE4539000581760 /* libz.tbd in Frameworks */,
 				84A7DC651CE4537F00581760 /* libsqlite3.0.tbd in Frameworks */,
-				84A7DC631CE4537300581760 /* CoreTelephony.framework in Frameworks */,
 				84A7DC611CE4536600581760 /* libc++.tbd in Frameworks */,
 				84A7DC581CE4528500581760 /* libWeChatSDK.a in Frameworks */,
 				9AC549291CA00B63009428BE /* Foundation.framework in Frameworks */,
 				9AC549271CA00B55009428BE /* CoreGraphics.framework in Frameworks */,
 				9AC549251CA00B48009428BE /* QuartzCore.framework in Frameworks */,
 				9A5A4AB91C95331000C7D17C /* UIKit.framework in Frameworks */,
-				CDE04F2E1C61CCCC00011413 /* AVFoundation.framework in Frameworks */,
 				CDE04F351C61D7BD00011413 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1404,6 +1408,8 @@
 		CDE04E0F1C5F3E4D00011413 = {
 			isa = PBXGroup;
 			children = (
+				84BD1D551D07BE3D008AE06B /* Social.framework */,
+				84BD1D531D07BE26008AE06B /* Accelerate.framework */,
 				84A7DC681CE4539C00581760 /* SystemConfiguration.framework */,
 				84A7DC661CE4539000581760 /* libz.tbd */,
 				84A7DC641CE4537F00581760 /* libsqlite3.0.tbd */,
@@ -2314,10 +2320,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Hitachi Beigongda Information System Co.,Ltd. (6Y94JD78DP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Hitachi Beigongda Information System Co.,Ltd. (6Y94JD78DP)";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/糖尿病康复伴侣/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "糖尿病康复伴侣/Info.plist";
@@ -2341,10 +2347,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Hitachi Beigongda Information System Co.,Ltd. (6Y94JD78DP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Hitachi Beigongda Information System Co.,Ltd. (6Y94JD78DP)";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/糖尿病康复伴侣/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "糖尿病康复伴侣/Info.plist";

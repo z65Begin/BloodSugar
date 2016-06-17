@@ -109,8 +109,9 @@
         [_timer fire];
     }else{
         [_timer invalidate];
-        self.layerSec.transform = CATransform3DMakeRotation(0, 0, 0, 1);
-        self.layerMin.transform = CATransform3DMakeRotation(0, 0, 0, 1);
+//        让指针返回初始位置 
+//        self.layerSec.transform = CATransform3DMakeRotation(0, 0, 0, 1);
+//        self.layerMin.transform = CATransform3DMakeRotation(0, 0, 0, 1);
     }
     sender.selected = !sender.selected;
 }

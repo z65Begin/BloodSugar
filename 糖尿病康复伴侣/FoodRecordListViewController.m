@@ -121,6 +121,10 @@
     self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"返回"style:UIBarButtonItemStylePlain target:nil action:nil];
     FoodCataController * foodCataController = [[FoodCataController alloc]init];
     
+    if ( self.eatFoodTime == DIET_TIMEPER_NOTFOOD) {
+        foodCataController.notDiet = YES;
+    }
+    
     foodCataController.date = self.date;
     foodCataController.eatFoodTime = self.eatFoodTime;
     [self.navigationController pushViewController:foodCataController animated:YES];

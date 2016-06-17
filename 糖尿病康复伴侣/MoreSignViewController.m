@@ -12,8 +12,15 @@
 
 #import "BodySignModel.h"
 
-@interface MoreSignViewController ()<UIScrollViewDelegate>
+#import "IQKeyboardManager.h"
 
+#import "IQKeyboardReturnKeyHandler.h"
+#import "IQUIView+IQKeyboardToolbar.h"
+
+@interface MoreSignViewController ()<UIScrollViewDelegate>
+{
+ IQKeyboardReturnKeyHandler *returnKeyHandler;
+}
 @property (nonatomic, strong) MoreSignVIew * moreSign;
 
 @property (nonatomic, strong) BodySignModel* bodySignModel;
@@ -22,12 +29,34 @@
 
 @implementation MoreSignViewController
 
+- (void)loadView{
+    CGRect frame = [UIScreen mainScreen].bounds;
+    
+    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:frame];
+    scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    //    scrollView.multipleTouchEnabled = YES;
+    //    scrollView.isMultipleTouchEnabled = YES;
+    scrollView.contentSize = CGSizeMake(0, 784);
+    scrollView.delaysContentTouches = YES;
+    scrollView.canCancelContentTouches = YES;
+    scrollView.clearsContextBeforeDrawing = YES;
+    scrollView.opaque = YES;
+    scrollView.userInteractionEnabled = YES;
+    scrollView.multipleTouchEnabled = YES;
+    scrollView.delegate = self;
+    self.view = scrollView ;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavigation];
     [self backgrundScrollView];
-
+//    [IQKeyboardManager sharedManager].enableDebugging = YES;
+    [IQKeyboardManager sharedManager].enable = YES;
+    
+    returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] initWithViewController:self];
+    [returnKeyHandler setLastTextFieldReturnKeyType:UIReturnKeyDone];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -131,20 +160,32 @@
 }
 
 - (void)backgrundScrollView{
-    CGRect frame = [UIScreen mainScreen].bounds;
-    
-    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:frame];
-    
-    scrollView.contentSize = CGSizeMake(0, 784);
+//    CGRect frame = [UIScreen mainScreen].bounds;
+//    
+//    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:frame];
+//    scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+////    scrollView.multipleTouchEnabled = YES;
+////    scrollView.isMultipleTouchEnabled = YES;
+//    scrollView.contentSize = CGSizeMake(0, 1000);
+//    scrollView.delaysContentTouches = YES;
+//    scrollView.canCancelContentTouches = YES;
+//    scrollView.clearsContextBeforeDrawing = YES;
+//    scrollView.opaque = YES;
+//    scrollView.userInteractionEnabled = YES;
+//    scrollView.multipleTouchEnabled = YES;
     
     MoreSignVIew * view = [MoreSignVIew viewWithXIB];
 
-    [scrollView addSubview:view];
-    scrollView.delegate = self;
+    [self.view addSubview:view];
     
-    [self.view addSubview:scrollView];
+   
+//    [self.view addSubview:scrollView];
     self.moreSign = view;
+//    [view.Synthesis5TF becomeFirstResponder];
 }
+//- (BOOL)canBecomeFirstResponder{
+//    return YES;
+//}
 #pragma mark  保存
 - (void)saveBtn:(UIButton *)sender{
     BodySignModel * model = [[BodySignModel alloc]init];
@@ -242,9 +283,9 @@
     [FileUtils saveBodySignWithUID:self.userId AndModel:model];
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self.view endEditing:YES];
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    [self.view endEditing:YES];
+//}
 - (void)setNavigation{
     self.navigationItem.title = @"更多体征";
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];

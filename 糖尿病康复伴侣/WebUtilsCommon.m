@@ -921,6 +921,9 @@
     GDataXMLElement * UCliDiagnosisEle = [GDataXMLElement elementWithName:UCliDiagnosis stringValue:model.CliDiagnosis];
     [dataEle addChild:UCliDiagnosisEle];
     
+    GDataXMLElement * UinfoSet = [GDataXMLElement elementWithName:@"UInfoSet" stringValue:model.InfoSet];
+    [dataEle addChild:UinfoSet];
+    
     [root addChild:dataEle];
     //设置文档信息
     GDataXMLDocument *rootDoc = [[GDataXMLDocument alloc] initWithRootElement:root];

@@ -39,7 +39,11 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!self.navigationController.navigationBarHidden) {
+            self.navigationController.navigationBarHidden = YES;
+        }
+    });
 }
 
 -(NSString *)getLocalTime{
@@ -226,7 +230,9 @@
 //弹出框
 -(void)alertView:(NSString *)title andMessage:(NSString *)message{
     UIAlertView *alertView =  [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alertView show];
+    dispatch_async(dispatch_get_main_queue(), ^{
+       [alertView show]; 
+    });
 }
 
 -(void)requestCodeImage

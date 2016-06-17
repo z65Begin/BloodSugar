@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7cd6;&#x5c3f;&#x75c5;&#x5eb7;&#x590d;&#x4f34;&#x4fa3;/LoginViewController.m"
-            timestampString = "486712842.667119"
+            timestampString = "487654876.732753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
             landmarkName = "-getDataFromserver"
             landmarkType = "5">
          </BreakpointContent>
@@ -80,96 +80,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x7cd6;&#x5c3f;&#x75c5;&#x5eb7;&#x590d;&#x4f34;&#x4fa3;/HomePageController.m"
-            timestampString = "486715538.697726"
+            filePath = "&#x7cd6;&#x5c3f;&#x75c5;&#x5eb7;&#x590d;&#x4f34;&#x4fa3;/LoginViewController.m"
+            timestampString = "487761830.439265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x7cd6;&#x5c3f;&#x75c5;&#x5eb7;&#x590d;&#x4f34;&#x4fa3;/HomePageController.m"
-            timestampString = "486715538.697726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x7cd6;&#x5c3f;&#x75c5;&#x5eb7;&#x590d;&#x4f34;&#x4fa3;/HomePageController.m"
-            timestampString = "486715538.697726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-viewWillAppear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x7cd6;&#x5c3f;&#x75c5;&#x5eb7;&#x590d;&#x4f34;&#x4fa3;/HomePageController.m"
-            timestampString = "486715999.417241"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
-            landmarkName = "-createHealView"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x7cd6;&#x5c3f;&#x75c5;&#x5eb7;&#x590d;&#x4f34;&#x4fa3;/HomePageController.m"
-            timestampString = "486715999.417241"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
-            landmarkName = "-change"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x7cd6;&#x5c3f;&#x75c5;&#x5eb7;&#x590d;&#x4f34;&#x4fa3;/HomePageController.m"
-            timestampString = "486715999.417241"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "-getBaseLineData"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "-getDataFromserver"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

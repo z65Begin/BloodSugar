@@ -9,6 +9,8 @@
 #import "consultViewController.h"
 #import "UserInfoModel.h"
 
+#import "HomePageController.h"
+
 #import "MBProgressHUD/MBProgressHUD+MJ.h"
 
 @interface consultViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -57,7 +59,15 @@
     }else{
         if (!isChoosePicture) {
             if([WebUtilsCommon upDocAdvisoryUseUID:self.uid andUOrg:model.Org andTitle:titleTextField.text TEXT:contentView.text andAdjunt:@""]){
-                [UtilCommon alertView:@"提示" andMessage:@"上传成功"];
+//                [UtilCommon alertView:@"提示" andMessage:@"上传成功"];
+                
+                NSLog(@"------------%@-----%@--",self.navigationController.visibleViewController,self.navigationController.topViewController);
+                [self.navigationController popViewControllerAnimated:YES];
+                
+                if ([self.navigationController.visibleViewController isKindOfClass:[HomePageController class]]) {
+                    HomePageController * homePC = (HomePageController *)self.navigationController.visibleViewController;
+                    [homePC refreshDoctorView];
+                }
             }
         }else{
             //        先传图片(生成uuid)filename 需要拼接名字
@@ -70,6 +80,11 @@
                 if([WebUtilsCommon upDocAdvisoryUseUID:self.uid andUOrg:model.Org andTitle:titleTextField.text TEXT:contentView.text andAdjunt:str16]){
                     [UtilCommon alertView:@"提示" andMessage:@"上传成功"];
                     [self.navigationController popViewControllerAnimated:YES];
+                    
+                    if ([self.navigationController.visibleViewController isKindOfClass:[HomePageController class]]) {
+                        HomePageController * homePC = (HomePageController *)self.navigationController.visibleViewController;
+                        [homePC refreshDoctorView];
+                    }
                 }
             }
             else{

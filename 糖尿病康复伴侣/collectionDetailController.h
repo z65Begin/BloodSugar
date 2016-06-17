@@ -10,4 +10,7 @@
 
 @interface collectionDetailController : UIViewController
 @property(nonatomic)NSString * menuID;
+
+@property (nonatomic, copy) NSString * date;
+
 @end

@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MoreSignVIew">
+        <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="MoreSignVIew">
             <rect key="frame" x="0.0" y="0.0" width="320" height="720"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -363,7 +363,7 @@
                         <constraint firstAttribute="height" constant="20" id="zyf-8Y-uay"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mU-qp-ufL">
                     <rect key="frame" x="0.0" y="374" width="320" height="30"/>
